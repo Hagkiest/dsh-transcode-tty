@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Terminal text normalizer">
+  <rect x="3" y="7" width="42" height="34" rx="5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+  <path d="M9.5 17.5 15 22l-5.5 4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 27h11" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M35.5 12.5 37 15l2.5 1.5L37 18l-1.5 2.5L34 18l-2.5-1.5L34 15z" fill="currentColor"/>
+  <path d="M12 34.5h24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 4"/>
+</svg>

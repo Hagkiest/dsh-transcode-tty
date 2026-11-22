@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Terminal Text Transcoder",
+    "description": "Rewrites shell tool output so the terminal view shows clean text: strips ANSI escapes, collapses carriage-return overwrites, repairs GBK/UTF-8 mojibake, and removes invisible control characters."
+  }
+}

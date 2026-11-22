@@ -1,0 +1,78 @@
+{
+  "name": "dsh-transcode-tty",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness plugin that transcodes shell tool output into text the terminal view renders correctly: ANSI escapes, carriage-return redraws, GBK/UTF-8 mojibake, and invisible control characters.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "terminal",
+    "tty",
+    "mojibake",
+    "ansi",
+    "gbk",
+    "cp936",
+    "encoding",
+    "transcode"
+  ],
+  "license": "MIT",
+  "author": "dsh-transcode-tty contributors",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./normalize": "./src/normalize.js",
+    "./config": "./src/config.js",
+    "./plugin": "./src/plugin.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "scripts",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "install.ps1",
+    "install.sh",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
+    "LICENSE",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "node test/run.mjs",
+    "test:normalize": "node test/normalize.test.mjs",
+    "test:realworld": "node test/realworld.test.mjs",
+    "test:plugin": "node --import ./test/loader.mjs test/plugin.test.mjs",
+    "verify": "node scripts/verify.mjs",
+    "install:plugin": "node scripts/install.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsh-transcode-tty/dsh-transcode-tty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dsh-transcode-tty/dsh-transcode-tty/issues"
+  },
+  "homepage": "https://github.com/dsh-transcode-tty/dsh-transcode-tty#readme"
+}

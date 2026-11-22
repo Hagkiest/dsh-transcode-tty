@@ -1,0 +1,86 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [20, 22, 24]
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Run the test suite
+        run: npm test
+
+      - name: Verify the package
+        run: node scripts/verify.mjs
+        # The composition check needs a profile, which CI does not have, so that
+        # section reports a note rather than a failure. Everything else must pass.
+
+  lint:
+    name: syntax and manifest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Check every source file parses
+        run: |
+          for file in index.js src/*.js scripts/*.mjs test/*.mjs; do
+            node --check "$file"
+          done
+
+      - name: Validate package.json
+        run: |
+          node -e "
+          const pkg = require('./package.json');
+          if (pkg.dsh?.bundle?.patch !== './cordis.patch.yml') {
+            throw new Error('dsh.bundle.patch must point at ./cordis.patch.yml');
+          }
+          if (pkg.type !== 'module') throw new Error('package must be an ES module');
+          if (pkg.exports?.['.'] !== './index.js') throw new Error('exports[\".\"] must be ./index.js');
+          for (const path of ['./index.js', './cordis.patch.yml', './README.md', './LICENSE']) {
+            if (!require('node:fs').existsSync(path)) throw new Error('missing ' + path);
+          }
+          console.log('package.json is valid');
+          "
+
+      - name: Check the locale files
+        run: |
+          node -e "
+          for (const name of ['en', 'zh']) {
+            const data = require('./locale/' + name + '.json');
+            if (typeof data !== 'object' || data === null) throw new Error(name + ' is not an object');
+          }
+          console.log('locale files are valid');
+          "

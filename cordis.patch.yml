@@ -1,0 +1,42 @@
+# dsh-transcode-tty bundle patch.
+#
+# A DSH bundle is a package whose `package.json` points `dsh.bundle.patch` at a
+# YAML file like this one. The profile's Loader applies the patch after every
+# base layer, and `insert` adds one entry to the composition.
+#
+# `id` is what a user overrides in their own profile patch layer, so it is stable
+# and independent of the package name. `name` must be the exact package name so
+# the Loader can resolve the entry's module.
+- insert:
+    - id: dsh-transcode-tty
+      name: dsh-transcode-tty
+      config:
+        # Normalize the text a terminal renders. Turning this off leaves every
+        # other field in place, so a user can disable the plugin without losing
+        # their tuned settings.
+        enabled: true
+        # Tools whose output is rendered as terminal text. `pwsh` and `bash`
+        # cover command results; `job_output` returns a background job's stream.
+        tools:
+          - pwsh
+          - bash
+          - job_output
+        # Remove escape sequences instead of showing them as literal text.
+        stripAnsi: true
+        # Keep only the segment a terminal would leave visible after \r.
+        collapseCarriageReturns: true
+        # Undo encoding mis-decodes.
+        repairMojibake: true
+        repairUtf8AsGbk: true
+        repairUtf8AsLatin1: true
+        repairGbkAsLatin1: true
+        # Remove invisible characters that break alignment or copied text.
+        stripControlChars: true
+        normalizeSpaces: true
+        # Opt-in transforms: off because each can change intended layout or hide
+        # detail the user may still need.
+        foldFullwidth: false
+        collapseReplacementRuns: false
+        trimTrailingWhitespace: false
+        # Skip blocks longer than this, to bound per-result cost.
+        maxTextLength: 262144

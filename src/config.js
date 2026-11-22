@@ -19,9 +19,8 @@ export const DEFAULT_TOOLS = Object.freeze(['pwsh', 'bash', 'job_output']);
  *
  * They are applied explicitly at activation rather than relying on the schema,
  * for two reasons: a Loader row may omit `config` entirely, and the schema
- * library is an optional peer that may not resolve (see
- * {@link loadSchemaLibrary}). In both cases the plugin must still behave the
- * same way.
+ * library may fail to resolve (see {@link loadSchemaLibrary}). In both cases the
+ * plugin must still behave the same way.
  * @type {Readonly<Record<string, unknown>>}
  */
 export const DEFAULT_CONFIG = Object.freeze({

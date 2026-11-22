@@ -49,7 +49,9 @@ export function normalizeContent(content, options) {
  * intact for every downstream consumer, while the text the terminal card renders
  * is the normalized one.
  *
- * @param {import('@deepseek-ai/cordis').Context} ctx - the plugin context.
+ * @param {object} ctx - the plugin context supplied by the runtime. It is typed
+ *   structurally rather than through an import so this package keeps zero runtime
+ *   dependency on Cordis: the context is passed in, never loaded.
  * @param {object} [config] - the validated row config.
  */
 export function apply(ctx, config = {}) {

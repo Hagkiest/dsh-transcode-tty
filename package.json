@@ -61,8 +61,10 @@
     "test:normalize": "node test/normalize.test.mjs",
     "test:realworld": "node test/realworld.test.mjs",
     "test:plugin": "node --import ./test/loader.mjs test/plugin.test.mjs",
+    "demo": "node scripts/demo.mjs",
     "verify": "node scripts/verify.mjs",
-    "install:plugin": "node scripts/install.mjs"
+    "install:plugin": "node scripts/install.mjs",
+    "uninstall:plugin": "node scripts/uninstall.mjs"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "^3.18.5"

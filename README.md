@@ -146,6 +146,14 @@ npm run verify
 
 One command to run when the plugin "does not seem to do anything". It checks the manifest, the dependency, the entry point, each transform, the test suite, and whether the live profile actually contains the entry.
 
+### See it work
+
+```powershell
+npm run demo
+```
+
+Reproduces every corruption the plugin fixes — GBK and Latin-1 mis-decodes, ANSI escapes, progress redraws, invisible characters — and prints three lines per case: the corrupted input, the plugin's expected result, and the live result. Run it from inside the Harness and the live line is rewritten by the installed plugin before it renders, so it should read as clean text while the input line shows the damage.
+
 ## Configuration
 
 Every transform has a switch. Defaults favor **not changing correct output**: the three risky transforms stay off.

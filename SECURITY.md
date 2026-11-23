@@ -11,7 +11,7 @@
 Please **do not open a public issue** for a security problem.
 
 Report it privately through GitHub's
-[Security Advisories](https://github.com/dsh-transcode-tty/dsh-transcode-tty/security/advisories/new)
+[Security Advisories](https://github.com/Hagkiest/dsh-transcode-tty/security/advisories/new)
 form. If that is unavailable, open an issue that says only "security report —
 please contact me" with no details, and a maintainer will reach out.
 

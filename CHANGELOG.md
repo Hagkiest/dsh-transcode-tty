@@ -56,5 +56,5 @@ First release.
 - A `U+FFFD` in a candidate was weighted so heavily that a correct repair could
   never beat its own input whenever a byte had already been lost.
 
-[Unreleased]: https://github.com/dsh-transcode-tty/dsh-transcode-tty/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/dsh-transcode-tty/dsh-transcode-tty/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Hagkiest/dsh-transcode-tty/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Hagkiest/dsh-transcode-tty/releases/tag/v1.0.0

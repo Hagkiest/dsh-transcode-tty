@@ -57,7 +57,7 @@ an individual is officially representing the community in public spaces.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement by opening a
 confidential report through GitHub's
-[Security Advisories](https://github.com/dsh-transcode-tty/dsh-transcode-tty/security/advisories/new)
+[Security Advisories](https://github.com/Hagkiest/dsh-transcode-tty/security/advisories/new)
 form, or by contacting a maintainer directly. All complaints will be reviewed and
 investigated promptly and fairly.
 

@@ -71,10 +71,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dsh-transcode-tty/dsh-transcode-tty.git"
+    "url": "git+https://github.com/Hagkiest/dsh-transcode-tty.git"
   },
   "bugs": {
-    "url": "https://github.com/dsh-transcode-tty/dsh-transcode-tty/issues"
+    "url": "https://github.com/Hagkiest/dsh-transcode-tty/issues"
   },
-  "homepage": "https://github.com/dsh-transcode-tty/dsh-transcode-tty#readme"
+  "homepage": "https://github.com/Hagkiest/dsh-transcode-tty#readme"
 }

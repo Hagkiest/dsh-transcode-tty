@@ -7,7 +7,7 @@ mojibake" and "silently corrupts correct text".
 ## Getting started
 
 ```sh
-git clone https://github.com/dsh-transcode-tty/dsh-transcode-tty.git
+git clone https://github.com/Hagkiest/dsh-transcode-tty.git
 cd dsh-transcode-tty
 npm install
 npm test

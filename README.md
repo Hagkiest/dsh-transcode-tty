@@ -1,6 +1,6 @@
 # dsh-transcode-tty
 
-[![test](https://github.com/dsh-transcode-tty/dsh-transcode-tty/actions/workflows/test.yml/badge.svg)](https://github.com/dsh-transcode-tty/dsh-transcode-tty/actions/workflows/test.yml)
+[![test](https://github.com/Hagkiest/dsh-transcode-tty/actions/workflows/test.yml/badge.svg)](https://github.com/Hagkiest/dsh-transcode-tty/actions/workflows/test.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
 [![harness](https://img.shields.io/badge/DeepSeek%20Harness-plugin-4B6BFB.svg)](https://github.com/deepseek-ai/deepseek-harness)
@@ -98,7 +98,7 @@ Requires **Node.js 20 or newer** and a DeepSeek Harness profile.
 ### Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/dsh-transcode-tty/dsh-transcode-tty.git
+git clone https://github.com/Hagkiest/dsh-transcode-tty.git
 cd dsh-transcode-tty
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
@@ -106,7 +106,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 ### macOS / Linux
 
 ```sh
-git clone https://github.com/dsh-transcode-tty/dsh-transcode-tty.git
+git clone https://github.com/Hagkiest/dsh-transcode-tty.git
 cd dsh-transcode-tty
 chmod +x install.sh && ./install.sh
 ```
